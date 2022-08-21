@@ -1,0 +1,18 @@
+name: ts-geiger
+author: Kellen Frodelius-Fujimoto
+description: Generate reports of type-unsafe code in TS projects
+inputs:
+  srcDirectory:
+    description: Directory to check
+    required: false
+    default: "./src"
+outputs:
+  tsIgnoreCount:
+    description: The number of lines affected by @ts-ignore
+  tsExpectErrorCount:
+    description: The number of lines affected by @ts-expect-error
+  totalLineCount:
+    description: The total number of lines read
+runs:
+  using: node16
+  main: "dist/main.js"
