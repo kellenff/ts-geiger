@@ -1,14 +1,31 @@
 {
   "name": "@rakenodiax/ts-geiger",
+  "version": "0.1.0",
   "license": "(MIT OR Apache-2.0)",
   "packageManager": "yarn@3.2.2",
+  "scripts": {
+    "prepack": "yarn tchk && yarn build",
+    "build": "esbuild ./src/main.ts --bundle --outfile=./dist/main.js --platform=node --target=node16",
+    "tchk": "tsc --noEmit"
+  },
   "devDependencies": {
     "@types/node": "^18.7.8",
+    "esbuild": "^0.15.5",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "@actions/core": "^1.9.1",
     "kloc": "^0.1.3"
-  }
+  },
+  "files": [
+    "dist/",
+    ".yarn/",
+    ".pnp.cjs",
+    ".pnp.loader.mjs",
+    "action.yaml",
+    ".yarnrc.yml",
+    "tsconfig.json",
+    "yarn.lock"
+  ]
 }
